@@ -1,0 +1,6 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <DocTemplate Condition="'$(DocTemplate)' == ''">default</DocTemplate>
+        <DocTemplate>$(DocTemplate),$(MSBuildThisFileDirectory)template</DocTemplate>
+    </PropertyGroup>
+</Project>

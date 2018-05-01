@@ -6,6 +6,7 @@
     <Description>A DocFX plugin to render PlantUml diagrams from markdown code blocks</Description>
     <PackageLicenseUrl>https://github.com/KevReed/DocFx.Plugins.PlantUml/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/KevReed/DocFx.Plugins.PlantUml</RepositoryUrl>
+    <NuspecFile>DocFx.Plugins.PlantUml.nuspec</NuspecFile>
   </PropertyGroup>
 
   <ItemGroup>

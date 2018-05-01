@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>DocFx.Plugins.PlantUml</id>
+    <version>1.0.0</version>
+    <title>DocFx.Plugins.PlantUml</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/KevReed/DocFx.Plugins.PlantUml/blob/master/LICENSE</licenseUrl>
+    <repository url="https://github.com/KevReed/DocFx.Plugins.PlantUml" />
+    <description>DocFx.PlantUml is a template for DocFx to allow DFM (DocFx MarkDown) documents to render diagrams using PlantUml</description>
+    <releaseNotes></releaseNotes>
+    <authors>DocFx.Plugins.PlantUml</authors>
+    <copyright>Copyright 2018</copyright>
+  </metadata>
+
+  <files>
+    <file src="bin\Debug\net461\PlantUml.Net.dll" target="build\template\plugins\" />
+    <file src="bin\Debug\net461\DocFx.Plugins.PlantUml.dll" target="build\template\plugins\" />
+    <file src="bin\Debug\net461\System.Net.Http.dll" target="build\template\plugins\" />
+    <file src="bin\Debug\net461\System.Security.Cryptography.*.dll" target="build\template\plugins\" />
+    <file src="DocFx.Plugins.PlantUml.targets" target="build\" />
+  </files>
+</package>
