@@ -28,9 +28,6 @@ namespace DocFx.Plugins.PlantUml
         /// <returns></returns>
         public IEnumerable<IDfmCustomizedRendererPart> CreateParts(IReadOnlyDictionary<string, object> parameters)
         {
-#if DEBUG
-            Debugger.Launch();
-#endif
             PlantUmlSettings settings = new DocFxPlantUmlSettings(parameters);
             yield return new PlantUmlMarkdownRenderer(settings);
         }
