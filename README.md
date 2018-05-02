@@ -3,19 +3,44 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/nop5uo1k4adrhne4?svg=true)](https://ci.appveyor.com/project/KevReed/docfx-plugins-plantuml)
 
 
-DocFx.PlantUml is a template for DocFx to allow DFM (DocFx MarkDown) documents to render diagrams using PlantUml
+DocFx.Plugins.PlantUml is a template for DocFx to allow DFM (DocFx MarkDown) documents to render diagrams using PlantUml
 
 ## Installation Instructions
 
-### Install via NuGet Package Manager
+DocFx.Plugins.PlantUml uses [PlantUml.Net](https://github.com/KevReed/PlantUml.Net).
+Ensure you have installed the [requirements](https://github.com/KevReed/PlantUml.Net#requirements)
 
-The nuget package should be installed to the project directory
+### Project Installation via NuGet
 
-```command
-nuget install DocFx.PlantUml -OutputDirectory .
+(using package manager)
+
+```PM
+Install-Package DocFx.Plugins.PlantUml
 ```
 
-### add to docfx.json
+<em>This method assumes you are including docfx.console</em>
+
+Installing in this way will explicitly set the templates used in your project, <b><em>the templates specified in docfx.json will be ignored!</em></b>
+
+To specify templates add them in a comma seperated list to the `DocTemplate` property in your project file.
+
+e.g.
+
+```xml
+<PropertyGroup>
+  <DocTemplate>default,my-custom-template</DocTemplate>
+</PropertyGroup>
+```
+
+### Manually Installation
+
+1. Use nuget.exe to install to the project directory
+
+```command
+nuget install DocFx.Plugins.PlantUml -ExcludeVersion -OutputDirectory .
+```
+
+2. add to docfx.json
 
 Now you need to tell DocFx where to find the new template
 
@@ -27,8 +52,19 @@ in docfx.json:
 ...
     "template": [
       "default",
-      "DocFx.PlantUml.1.0.0\\content"
+      "DocFx.Plugins.PlantUml/template"
     ]
+...
+```
+### Download PlantUml
+
+[download plantuml](http://plantuml.com/download) (pick whichever licence suits your needs), the .jar can be placed directly into the project root, or an alternate configuration can be specified in your docfx.json
+
+```json
+...
+    "markdownEngineProperties": {
+      "plantUml.localPlantUmlPath": "path/to/plantuml.jar"
+    },
 ...
 ```
 
@@ -36,17 +72,24 @@ in docfx.json:
 
 To render a PlantUml diagram add a code block to you markup:
 
-```markdown
-'``plantUml
+````markdown
+```plantUml
 
 Bob->Alice : hello
 
-'``
 ```
+````
 
 should render:
 
 ![Bob->Alice : hello](example.png)
+
+### Settings
+
+The plugin can be configured in your docfx.json
+the following options are available
+
+
 
 ### Diagram syntax
 
