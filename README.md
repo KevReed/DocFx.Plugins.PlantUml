@@ -2,7 +2,6 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/nop5uo1k4adrhne4?svg=true)](https://ci.appveyor.com/project/KevReed/docfx-plugins-plantuml)
 
-
 DocFx.Plugins.PlantUml is a template for DocFx to allow DFM (DocFx MarkDown) documents to render diagrams using PlantUml
 
 ## Installation Instructions
@@ -12,15 +11,15 @@ Ensure you have installed the [requirements](https://github.com/KevReed/PlantUml
 
 ### Project Installation via NuGet
 
+This method assumes you are including docfx.console.
+
 (using package manager)
 
 ```PM
 Install-Package DocFx.Plugins.PlantUml
 ```
 
-<em>This method assumes you are including docfx.console</em>
-
-Installing in this way will explicitly set the templates used in your project, <b><em>the templates specified in docfx.json will be ignored!</em></b>
+Installing in this way will explicitly set the templates used in your project, *the templates specified in docfx.json will be ignored!*
 
 To specify templates add them in a comma seperated list to the `DocTemplate` property in your project file.
 
@@ -40,9 +39,9 @@ e.g.
 nuget install DocFx.Plugins.PlantUml -ExcludeVersion -OutputDirectory .
 ```
 
-2. add to docfx.json
+2. Add to docfx.json
 
-Now you need to tell DocFx where to find the new template
+Now you need to tell DocFx where to find the new template...
 
 assuming you extracted the package to the project directory:
 
@@ -56,6 +55,7 @@ in docfx.json:
     ]
 ...
 ```
+
 ### Download PlantUml
 
 [download plantuml](http://plantuml.com/download) (pick whichever licence suits your needs), the .jar can be placed directly into the project root, or an alternate configuration can be specified in your docfx.json
@@ -89,7 +89,29 @@ should render:
 The plugin can be configured in your docfx.json
 the following options are available
 
+| Setting                        | Description                                                             | Default                                 |
+|--------------------------------|-------------------------------------------------------------------------|-----------------------------------------|
+| plantUml. javaPath             | path to java installation                                               | uses the JAVA_HOME environment variable |
+| plantUml. localGraphvizDotPath | path to graphviz dot exe (required for local rendering mode only)       | none                                    |
+| plantUml. localPlantUmlPath    | path to plantuml.jar                                                    | will look in project directory          |
+| plantUml. outputFormat         | format of generated images (currently only svg is supported)            | svg                                     |
+| plantUml. remoteUrl            | url to remote PlantUml server (required for remote rendering mode only) | http://www.plantuml.com/plantuml/       |
+| plantUml.renderingMode         | remote or local                                                         | remote                                  |
 
+example:
+
+```json
+...
+    "markdownEngineProperties": {
+      "plantUml.javaPath": "C:/Program Files/Java/jre1.8.0_171",
+      "plantUml.localGraphvizDotPath": "C:/Program Files (x86)/Graphviz2.38/bin/dot.exe",
+      "plantUml.localPlantUmlPath": "plantuml.jar",
+      "plantUml.outputFormat":"png",
+      "plantUml.remoteUrl":"http://www.plantuml.com/plantuml/",
+      "plantUml.renderingMode":"remote",
+    },
+...
+```
 
 ### Diagram syntax
 
