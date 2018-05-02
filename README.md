@@ -87,7 +87,7 @@ should render:
 ### Settings
 
 The plugin can be configured in your docfx.json
-the following options are available
+the following options are available:
 
 | Setting                        | Description                                                             | Default                                 |
 |--------------------------------|-------------------------------------------------------------------------|-----------------------------------------|
