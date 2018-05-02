@@ -1,18 +1,28 @@
 ﻿using System;
 using DocFx.Plugins.PlantUml.OutputFormatters;
+using Microsoft.DocAsCode.MarkdownLite;
 using PlantUml.Net;
 
 namespace DocFx.Plugins.PlantUml
 {
     internal class FormatterFactory
     {
-        internal IOutputFormatter CreateOutputFormatter(OutputFormat outputFormat)
+        private DocFxPlantUmlSettings settings;
+
+        private OutputFormat OutputFormat => settings.OutputFormat;
+
+        public FormatterFactory(DocFxPlantUmlSettings settings)
         {
-            switch (outputFormat)
+            this.settings = settings;
+        }
+
+        internal IOutputFormatter CreateOutputFormatter(Options options)
+        {
+            switch (OutputFormat)
             {
                 case OutputFormat.Svg:
 
-                    return new SvgOutputFormatter();
+                    return new SvgOutputFormatter(options);
 
                 case OutputFormat.Png:
                 case OutputFormat.Eps:
@@ -26,7 +36,7 @@ namespace DocFx.Plugins.PlantUml
                 case OutputFormat.LaTeX:
                 default:
 
-                    throw new NotSupportedException($"output format {outputFormat} is not currently supported");
+                    throw new NotSupportedException($"output format {OutputFormat} is not currently supported");
             }
         }
     }

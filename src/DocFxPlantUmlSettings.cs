@@ -3,8 +3,10 @@ using PlantUml.Net;
 
 namespace DocFx.Plugins.PlantUml
 {
-    internal class DocFxPlantUmlSettings : PlantUmlSettings
+    public class DocFxPlantUmlSettings : PlantUmlSettings
     {
+        public OutputFormat OutputFormat { get; }
+
         public DocFxPlantUmlSettings(IReadOnlyDictionary<string, object> parameters)
         {
             JavaPath = parameters.GetValueOrDefault("plantUml.javaPath", JavaPath);

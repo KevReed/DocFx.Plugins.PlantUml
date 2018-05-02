@@ -11,6 +11,11 @@
     <releaseNotes></releaseNotes>
     <authors>DocFx.Plugins.PlantUml</authors>
     <copyright>Copyright 2018</copyright>
+
+    <dependencies>
+      <dependency id="docfx.console" version="2.33.2" />
+      <dependency id="PlantUml.Net" version="1.0.13" />
+    </dependencies>
   </metadata>
 
   <files>

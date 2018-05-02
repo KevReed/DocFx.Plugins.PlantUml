@@ -1,12 +1,23 @@
 ﻿using Microsoft.DocAsCode.MarkdownLite;
 
+using static System.Text.Encoding;
+
 namespace DocFx.Plugins.PlantUml.OutputFormatters
 {
     internal class SvgOutputFormatter : IOutputFormatter
     {
-        public StringBuffer FormatOutput(string langPrefix, string output)
+        private Options options;
+
+        public SvgOutputFormatter(Options options)
         {
-            return $"<div class=\"{langPrefix}plantUml\" \\> {output} </div>";
+            this.options = options;
+        }
+
+        public StringBuffer FormatOutput(MarkdownCodeBlockToken token, byte[] output)
+        {
+            string svg = UTF8.GetString(output);
+
+            return $"<div class=\"{options.LangPrefix}plantUml\" \\> {svg} </div>";
         }
     }
 }

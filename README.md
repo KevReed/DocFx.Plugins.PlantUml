@@ -1,4 +1,7 @@
-# DocFx.PlantUml
+# DocFx.Plugins.PlantUml
+
+[![Build status](https://ci.appveyor.com/api/projects/status/nop5uo1k4adrhne4?svg=true)](https://ci.appveyor.com/project/KevReed/docfx-plugins-plantuml)
+
 
 DocFx.PlantUml is a template for DocFx to allow DFM (DocFx MarkDown) documents to render diagrams using PlantUml
 
