@@ -24,6 +24,14 @@ namespace DocFx.Plugins.PlantUml
 
                     return new SvgOutputFormatter(options);
 
+                case OutputFormat.Ascii:
+
+                    return new AsciiOutputFormatter(options);
+
+                case OutputFormat.Ascii_Unicode:
+
+                    return new AsciiUnicodeOutputFormatter(options);
+
                 case OutputFormat.Png:
                 case OutputFormat.Eps:
                 case OutputFormat.Pdf:
@@ -31,8 +39,6 @@ namespace DocFx.Plugins.PlantUml
                 case OutputFormat.Xmi:
                 case OutputFormat.Scxml:
                 case OutputFormat.Html:
-                case OutputFormat.Ascii:
-                case OutputFormat.Ascii_Unicode:
                 case OutputFormat.LaTeX:
                 default:
 

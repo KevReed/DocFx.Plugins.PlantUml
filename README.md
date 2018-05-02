@@ -31,7 +31,7 @@ e.g.
 </PropertyGroup>
 ```
 
-### Manually Installation
+### Manual Installation
 
 1. Use nuget.exe to install to the project directory
 
@@ -94,7 +94,7 @@ the following options are available:
 | plantUml. javaPath             | path to java installation                                               | uses the JAVA_HOME environment variable |
 | plantUml. localGraphvizDotPath | path to graphviz dot exe (required for local rendering mode only)       | none                                    |
 | plantUml. localPlantUmlPath    | path to plantuml.jar                                                    | will look in project directory          |
-| plantUml. outputFormat         | format of generated images (currently only svg is supported)            | svg                                     |
+| plantUml. outputFormat         | format of generated images (svg, ascii, ascii_unicode)                  | svg                                     |
 | plantUml. remoteUrl            | url to remote PlantUml server (required for remote rendering mode only) | http://www.plantuml.com/plantuml/       |
 | plantUml.renderingMode         | remote or local                                                         | remote                                  |
 
