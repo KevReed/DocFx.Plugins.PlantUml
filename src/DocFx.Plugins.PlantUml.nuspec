@@ -19,10 +19,10 @@
   </metadata>
 
   <files>
-    <file src="bin\Debug\net461\PlantUml.Net.dll" target="build\template\plugins\" />
-    <file src="bin\Debug\net461\DocFx.Plugins.PlantUml.dll" target="build\template\plugins\" />
-    <file src="bin\Debug\net461\System.Net.Http.dll" target="build\template\plugins\" />
-    <file src="bin\Debug\net461\System.Security.Cryptography.*.dll" target="build\template\plugins\" />
+    <file src="bin\Release\net461\PlantUml.Net.dll" target="build\template\plugins\" />
+    <file src="bin\Release\net461\DocFx.Plugins.PlantUml.dll" target="build\template\plugins\" />
+    <file src="bin\Release\net461\System.Net.Http.dll" target="build\template\plugins\" />
+    <file src="bin\Release\net461\System.Security.Cryptography.*.dll" target="build\template\plugins\" />
     <file src="DocFx.Plugins.PlantUml.targets" target="build\" />
   </files>
 </package>
