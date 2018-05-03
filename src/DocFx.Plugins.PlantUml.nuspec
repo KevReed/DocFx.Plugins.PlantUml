@@ -11,18 +11,13 @@
     <releaseNotes></releaseNotes>
     <authors>DocFx.Plugins.PlantUml</authors>
     <copyright>Copyright 2018</copyright>
-
-    <dependencies>
-      <dependency id="docfx.console" version="2.33.2" />
-      <dependency id="PlantUml.Net" version="1.0.13" />
-    </dependencies>
   </metadata>
 
   <files>
-    <file src="bin\Release\net461\PlantUml.Net.dll" target="build\template\plugins\" />
-    <file src="bin\Release\net461\DocFx.Plugins.PlantUml.dll" target="build\template\plugins\" />
-    <file src="bin\Release\net461\System.Net.Http.dll" target="build\template\plugins\" />
-    <file src="bin\Release\net461\System.Security.Cryptography.*.dll" target="build\template\plugins\" />
+    <file src="bin\Release\net461\PlantUml.Net.dll" target="template\plugins\" />
+    <file src="bin\Release\net461\DocFx.Plugins.PlantUml.dll" target="template\plugins\" />
+    <file src="bin\Release\net461\System.Net.Http.dll" target="template\plugins\" />
+    <file src="bin\Release\net461\System.Security.Cryptography.*.dll" target="template\plugins\" />
     <file src="DocFx.Plugins.PlantUml.targets" target="build\" />
   </files>
 </package>
