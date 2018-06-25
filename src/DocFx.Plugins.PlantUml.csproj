@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
@@ -12,7 +12,7 @@
     <PackageReference Include="Microsoft.DocAsCode.Dfm" Version="2.35.4" />
     <PackageReference Include="Microsoft.DocAsCode.MarkdownLite" Version="2.35.4" />
     <PackageReference Include="Microsoft.DocAsCode.Plugins" Version="2.35.4" />
-    <PackageReference Include="PlantUml.Net" Version="1.0.13" />
+    <PackageReference Include="PlantUml.Net" Version="1.1.33" />
   </ItemGroup>
 
 </Project>
