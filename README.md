@@ -56,18 +56,6 @@ in docfx.json:
 ...
 ```
 
-### Download PlantUml
-
-[download plantuml](http://plantuml.com/download) (pick whichever licence suits your needs), the .jar can be placed directly into the project root, or an alternate configuration can be specified in your docfx.json
-
-```json
-...
-    "markdownEngineProperties": {
-      "plantUml.localPlantUmlPath": "path/to/plantuml.jar"
-    },
-...
-```
-
 ## Usage
 
 To render a PlantUml diagram add a code block to you markup:
@@ -91,11 +79,11 @@ the following options are available:
 
 | Setting                        | Description                                                             | Default                                 |
 |--------------------------------|-------------------------------------------------------------------------|-----------------------------------------|
-| plantUml. javaPath             | path to java installation                                               | uses the JAVA_HOME environment variable |
-| plantUml. localGraphvizDotPath | path to graphviz dot exe (required for local rendering mode only)       | none                                    |
-| plantUml. localPlantUmlPath    | path to plantuml.jar                                                    | will look in project directory          |
-| plantUml. outputFormat         | format of generated images (svg, ascii, ascii_unicode)                  | svg                                     |
-| plantUml. remoteUrl            | url to remote PlantUml server (required for remote rendering mode only) | http://www.plantuml.com/plantuml/       |
+| plantUml.javaPath              | path to java installation                                               | uses the JAVA_HOME environment variable |
+| plantUml.localGraphvizDotPath  | path to graphviz dot exe (required for local rendering mode only)       | none                                    |
+| plantUml.localPlantUmlPath     | path to plantuml.jar                                                    | will look in project directory          |
+| plantUml.outputFormat          | format of generated images (svg, ascii, ascii_unicode)                  | svg                                     |
+| plantUml.remoteUrl             | url to remote PlantUml server (required for remote rendering mode only) | http://www.plantuml.com/plantuml/       |
 | plantUml.renderingMode         | remote or local                                                         | remote                                  |
 
 example:
@@ -108,10 +96,52 @@ example:
       "plantUml.localPlantUmlPath": "plantuml.jar",
       "plantUml.outputFormat":"png",
       "plantUml.remoteUrl":"http://www.plantuml.com/plantuml/",
-      "plantUml.renderingMode":"remote",
+      "plantUml.renderingMode":"remote"
     },
 ...
 ```
+
+### Local Rendering
+
+By default, PlantUML documents will be rendered on the remote server. Local rendering mode uses a local copy of PlantUml to render diagrams.
+
+Local rendering mode can be configured in in your docfx.json:
+
+```json
+...
+    "markdownEngineProperties": {
+      "plantUml.renderingMode":"local"
+    },
+...
+```
+
+#### Requirements
+
+##### Java
+
+Install [Java](https://java.com/en/download/).
+Ensure that the JAVA_HOME environment variable is set.
+
+##### PlantUml
+
+Download [PlantUml](http://plantuml.com/download) (pick whichever licence suits your needs), the .jar can be placed directly into the project root, or an alternate configuration can be specified in your docfx.json:
+
+```json
+...
+    "markdownEngineProperties": {
+      "plantUml.localPlantUmlPath": "path/to/plantuml.jar"
+    },
+...
+```
+
+##### GraphViz Dot (optional)
+
+GraphViz Dot is required for [Local](#Local) rendering mode of any diagram other than sequence.
+
+Install [GraphViz Dot](https://graphviz.gitlab.io/download/)
+You may need to set the GRAPHVIZ_DOT environment variable
+
+see the [PlantUml documentation](http://plantuml.com/graphviz-dot) for more detailed instructions.
 
 ### Diagram syntax
 
