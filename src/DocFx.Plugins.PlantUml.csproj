@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFramework>net472</TargetFramework>
     <Version>1.0.0</Version>
     <NuspecFile>DocFx.Plugins.PlantUml.nuspec</NuspecFile>
     <NuspecProperties>version=$(Version)</NuspecProperties>
@@ -9,10 +9,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Composition" Version="1.0.31" />
-    <PackageReference Include="Microsoft.DocAsCode.Dfm" Version="2.35.4" />
-    <PackageReference Include="Microsoft.DocAsCode.MarkdownLite" Version="2.35.4" />
-    <PackageReference Include="Microsoft.DocAsCode.Plugins" Version="2.35.4" />
-    <PackageReference Include="PlantUml.Net" Version="1.1.33" />
+    <PackageReference Include="Microsoft.DocAsCode.Dfm" Version="2.52.0" />
+    <PackageReference Include="Microsoft.DocAsCode.MarkdownLite" Version="2.52.0" />
+    <PackageReference Include="Microsoft.DocAsCode.Plugins" Version="2.52.0" />
+    <PackageReference Include="PlantUml.Net" Version="1.2.48" />
   </ItemGroup>
 
 </Project>
