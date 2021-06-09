@@ -32,8 +32,16 @@ namespace DocFx.Plugins.PlantUml
             IPlantUmlRenderer plantUmlRenderer = rendererFactory.CreateRenderer(settings);
             IOutputFormatter outputFormatter = formatterFactory.CreateOutputFormatter(markdownRenderer.Options);
 
-            byte[] output = plantUmlRenderer.Render(token.Code, settings.OutputFormat);
+            byte[] output = plantUmlRenderer.Render(CleanEscapedCharacters(token.Code), settings.OutputFormat);
             return outputFormatter.FormatOutput(token, output);
+        }
+
+        private string CleanEscapedCharacters(string code)
+        {
+            // Markdown in source /// comments are preprocessed to escape XML reserved characters.
+            return code.Replace("&amp;", "&")
+                        .Replace("&lt;", "<")
+                        .Replace("&gt;", ">");
         }
     }
 }
